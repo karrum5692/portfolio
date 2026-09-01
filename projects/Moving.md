@@ -20,6 +20,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![AWS RDS](https://img.shields.io/badge/AWS_RDS-527FFF?style=flat-square&logo=amazonrds&logoColor=white)
 ![k6](https://img.shields.io/badge/k6-7D64FF?style=flat-square&logo=k6&logoColor=white)
+![Sentry](https://img.shields.io/badge/Sentry-362D59?style=flat-square&logo=sentry&logoColor=white)
 
 ---
 
@@ -230,3 +231,6 @@ _count: { estimates: estimates.length },
 
 **2차 — 관리자 운영 (Backend)**
 운영 대시보드, 견적 운영, 공지사항, FAQ, Q&A 관리, 사용자 약관·운영사항 관리, 관리자 로그, 운영 통계
+
+**공통**
+Sentry 에러 추적 도입. 이전 프로젝트에서 로그 체계를 세운 뒤 원인 추적 시간이 줄어드는 것을 경험해, 이번에는 문제가 생기기 전에 먼저 붙였습니다.
