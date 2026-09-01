@@ -1,10 +1,10 @@
 ## Projects
 
-| | 기간 | 한 일 |
-|---|---|---|
-| **[MOVING](projects/moving.md)** | 2026.07 ~ 08 | 관리자 대시보드 API 응답 33.8s → 4ms |
-| **[최애의 포토](projects/my-favorite-photo.md)** | 2026.06 | PM · 6개 도메인 통합, 로그 수집 체계 구축 |
-| **[Forest of Learning](projects/forest-of-learning.md)** | 2026.04 | 집중 타이머 시각 계산, 포인트 지급 로직 |
+| | 기간 | 한 일 | Stack |
+|---|---|---|---|
+| **[MOVING](projects/moving.md)** | 2026.07 ~ 08 | 관리자 대시보드 API 응답 33.8s → 4ms | Express · Prisma · PostgreSQL · AWS RDS |
+| **[최애의 포토](projects/my-favorite-photo.md)** | 2026.06 | PM · 6개 도메인 통합, 로그 수집 체계 구축 | Express · Prisma · Next.js · Sentry |
+| **[Forest of Learning](projects/forest-of-learning.md)** | 2026.04 | 집중 타이머 시각 계산, 포인트 지급 로직 | Next.js · Express · Prisma |
 
 <details>
 <summary><b>이전 프로젝트 (2021 ~ 2022)</b></summary>
