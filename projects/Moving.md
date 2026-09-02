@@ -5,7 +5,7 @@
 **기간** 2026.07.20 ~ 2026.08.28 (6주) · **인원** 8명
 **담당** 견적 요청 API · 관리자 운영 대시보드 API · 약관·통계 기능
 
-[Backend](https://github.com/4roro-moving/moving-backend) · [Frontend](https://github.com/4roro-moving/moving-frontend) · [Admin](https://github.com/4roro-moving/moving-admin-frontend)
+[Backend](https://github.com/4roro-moving/moving-backend) · [Frontend](https://github.com/4roro-moving/moving-frontend) · [Admin](https://github.com/4roro-moving/moving-admin-frontend) · [Service](https://moving-frontend-p2ol.vercel.app/)
 
 > 실사용 규모(590만 행) 데이터에서 관리자 대시보드 API를 33.8초에서 0.38초로 개선하고, k6 부하 테스트로 300 VU까지 검증했습니다. 그 과정에서 같은 도메인이 두 번 병목이 되었고, 두 번의 원인은 서로 달랐습니다.
 
