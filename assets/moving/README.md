@@ -38,4 +38,23 @@ k6 run -e BASE_URL=... -e TEST_PASSWORD=... -e STAGE=stress load-test.js
 
 300 VU · 8분 테스트에서 38,676개 체크를 전부 통과했고, 대조군을 포함한 모든 임계값을 충족했습니다.
 
+<details>
+<summary><b>실행 결과 상세</b></summary>
+
+<br>
+
+**smoke (5 VU)**
+
+![smoke](./Smoke_test_result.png)
+
+**load (50 VU)**
+
+![load](./Load_test_result.png)
+
+**stress (300 VU)**
+
+![stress](./Stress_test_result.png)
+
+</details>
+
 이 테스트로 발견한 병목(`_count` 상관 서브쿼리)과 해결 과정은 [MOVING 문서](../../projects/moving.md)에 정리했습니다.
