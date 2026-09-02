@@ -5,7 +5,7 @@
 **기간** 2026.07.20 ~ 2026.08.28 (6주) · **인원** 8명
 **담당** 견적 요청 API · 관리자 운영 대시보드 API · 약관·통계 기능
 
-[Backend](https://github.com/4roro-moving/moving-backend) · [Frontend](https://github.com/4roro-moving/moving-frontend) · [Admin](https://github.com/4roro-moving/moving-admin-frontend)
+[Backend](https://github.com/4roro-moving/moving-backend) · [Frontend](https://github.com/4roro-moving/moving-frontend) · [Admin](https://github.com/4roro-moving/moving-admin-frontend) · [Service](https://moving-frontend-p2ol.vercel.app/)
 
 > 실사용 규모(685만 행) 데이터에서 관리자 대시보드 API를 33.8초에서 0.38초로 개선하고, k6 부하 테스트로 300 VU까지 검증했습니다. 그 과정에서 같은 도메인이 두 번 병목이 되었고, 두 번의 원인은 서로 달랐습니다.
 
@@ -34,7 +34,16 @@
 
 병렬 실행은 동시에 던지는 것이지 각 쿼리를 빠르게 만들지 않습니다. 17개를 같이 보내도 **가장 느린 하나가 끝나야 응답이 나갑니다.**
 
-로컬 개발 환경의 시드 데이터는 수백 건 규모여서 어떤 쿼리를 써도 빠르게 동작했습니다. 실사용 환경을 검증하기 위해 회원 11만·견적 169만 건 등 약 590만 행을 생성해 AWS RDS로 이관한 뒤에야 드러난 문제였습니다.
+로컬 개발 환경의 시드 데이터는 수백 건 규모여서 어떤 쿼리를 써도 빠르게 동작했습니다. 실사용 환경을 검증하기 위해 약 685만 행의 데이터를 생성해 AWS RDS로 이관한 뒤에야 드러난 문제였습니다.
+
+| 테이블 | 행 수 |
+|---|---|
+| 견적 | 169만 |
+| 이력 | 122만 |
+| 채팅 | 61만 |
+| 견적 요청 | 55만 |
+| 리뷰 | 37만 |
+| 회원 | 11만 |
 
 인스턴스를 키우는 방법도 있었지만, 그러면 원인은 그대로 남습니다.
 
@@ -110,6 +119,8 @@ Index Scan using estimates_status_idx on estimates
 판별 기준을 먼저 정하기 위해서입니다. 무거운 쿼리만 느려지면 **쿼리 구조 문제**이고, 대조군까지 같이 느려지면 **인스턴스 한계**입니다. 이 구분이 없으면 느려졌다는 사실만 알고 어디를 고쳐야 할지는 모릅니다.
 
 외부 API 호출(AI 예상 견적), 연결 유지형(SSE 알림), 쓰기 작업은 제외했습니다. 각각 실제 과금이 발생하거나, 별도 시나리오가 필요하거나, 데이터를 오염시키기 때문입니다.
+
+→ [부하 테스트 스크립트](../assets/moving/load-test.js)
 
 ### 같은 도메인이 두 번째로 느렸습니다
 
@@ -209,6 +220,8 @@ _count: { estimates: estimates.length },
 | stress | 300 | 162.51ms | 0.00% |
 
 300 VU · 8분 스트레스 테스트에서 38,676개 체크를 전부 통과했고, 대조군을 포함한 모든 임계값을 충족했습니다.
+
+→ [실행 결과 및 시나리오 상세](../assets/moving/)
 
 ---
 
