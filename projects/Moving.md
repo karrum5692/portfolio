@@ -9,6 +9,22 @@
 
 > 실사용 규모(685만 행) 데이터에서 관리자 대시보드 API를 33.8초에서 0.38초로 개선하고, k6 부하 테스트로 300 VU까지 검증했습니다. 그 과정에서 같은 도메인이 두 번 병목이 되었고, 두 번의 원인은 서로 달랐습니다.
 
+
+<details>
+<summary><b>서비스 화면</b> (배포 종료로 캡처로 대체)</summary>
+<br>
+<table>
+  <tr>
+    <td align="center"><b>기사님 찾기</b><br><img src="../assets/moving/screens/find-mover.png" width="400"></td>
+    <td align="center"><b>견적 목록</b><br><img src="../assets/moving/screens/estimate-list.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>내 견적 요청</b><br><img src="../assets/moving/screens/my-estimate.png" width="400"></td>
+    <td align="center"><b>프로필 수정</b><br><img src="../assets/moving/screens/profile-edit.png" width="400"></td>
+  </tr>
+</table>
+</details>
+
 ---
 
 ## Tech Stack
