@@ -11,7 +11,7 @@
 
 
 <details>
-<summary><b>서비스 화면</b> (배포 종료로 캡처로 대체)</summary>
+<summary><b>서비스 화면</b></summary>
 <br>
 <table>
   <tr>
